@@ -10,7 +10,7 @@ let cuerpoTabla = document.getElementById('cuerpoTabla');
 let cantidad = 0
 
 
-//refresh carrito -----------------------------------
+//refresh carrito -------------------------------------
 carrito.forEach(producto => {
     let itemCarrito = document.createElement('tr') 
     itemCarrito.innerHTML +=`
@@ -29,7 +29,7 @@ const traerProductos = async() => {
     const response = await fetch('productos.json');
     const data = await response.json();
     
-    //Crear cards --------------------------------------------------------------------
+    //Crear cards ---------------------------------------------------------------------
     let cards = document.getElementById("cards");
     data.forEach((producto) => {
         const buttonId = `${producto.id}`;
@@ -45,7 +45,7 @@ const traerProductos = async() => {
         </div>`
     }); 
 
-    //Agregar al carrito -----------------------------------------------------------
+    //Agregar al carrito ------------------------------------------------------------
     data.forEach((producto) => {
         const buttonId = `${producto.id}`
         document.getElementById(buttonId).addEventListener('click', () =>{
@@ -85,15 +85,16 @@ const traerProductos = async() => {
 }
 traerProductos()
 
-//vaciar carrito -----------------------------------------------------------
+//vaciar carrito ------------------------------------------------------------
 function vaciarCarrito(){
+    
     Swal.fire({
         title: 'Estas seguro que queres vaciar el carrito?',
-        icon: 'warning',    
+        icon: 'warning',  
         showCancelButton: true,
-        confirmButtonText: 'si, vaciar',
-        cancelButtonText: 'No, cancelar!',
-        reverseButtons: true
+        cancelButtonColor: '#f00b0b',
+        confirmButtonColor: '#029e2d',
+        confirmButtonText: 'Si, vaciar!'  
     }).then((result) => {
         if (result.isConfirmed) {
             carrito.splice(0,carrito.length);
@@ -107,9 +108,7 @@ function vaciarCarrito(){
         
             console.log(carrito);
             location.reload();
-        } else if (result.isDenied) {
-            Swal.fire('Gracias', '', 'success')
-        }
+        } 
     })
 }
 
