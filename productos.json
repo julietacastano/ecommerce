@@ -1,0 +1,8 @@
+[
+    {"id": 1, "nombre": "Vela", "img": "./Imagenes/vela.jpg", "precio": 2000},
+    {"id": 2, "nombre": "Set de velas", "img": "./Imagenes/velas.jpg", "precio": 7000},
+    {"id": 3, "nombre": "Set de te", "img": "./Imagenes/sette.jpg", "precio": 6000},
+    {"id": 4, "nombre": "Tetera", "img": "./Imagenes/tetera.jpg", "precio": 3000},
+    {"id": 5, "nombre": "Porta sahumerios", "img": "./Imagenes/sahumerio.jpg", "precio": 1000},
+    {"id": 6, "nombre": "Taza", "img": "./Imagenes/taza.jpg", "precio": 1500}
+]
